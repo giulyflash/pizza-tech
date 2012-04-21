@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from DBImplementationService WSDL service -->
+
+  <service name="DBImplementation" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://client"/>
+      <parameter name="wsdlServiceElement" value="DBImplementationService"/>
+      <parameter name="schemaQualified" value="http://client"/>
+      <parameter name="wsdlServicePort" value="DBImplementation"/>
+      <parameter name="className" value="client.DBImplementation"/>
+      <parameter name="wsdlPortType" value="DBImplementation"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://client" xmlns:retNS="http://client" xmlns:rtns="http://client" name="getPizzaById" qname="operNS:getPizzaById" returnQName="retNS:getPizzaByIdReturn" returnType="rtns:Pizza" soapAction="">
+        <parameter xmlns:pns="http://client" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:id" type="tns:int"/>
+      </operation>
+      <operation xmlns:operNS="http://client" xmlns:retNS="http://client" xmlns:rtns="http://client" xmlns:tns="http://client" name="getAllPizzas" qname="operNS:getAllPizzas" returnQName="retNS:getAllPizzasReturn" returnType="rtns:ArrayOf_xsd_anyType" returnItemQName="tns:item" soapAction="">
+      </operation>
+      <operation xmlns:operNS="http://client" name="addPizza" qname="operNS:addPizza" soapAction="">
+        <parameter xmlns:pns="http://client" xmlns:tns="http://client" qname="pns:pizza" type="tns:Pizza"/>
+      </operation>
+      <parameter name="allowedMethods" value="getPizzaById getAllPizzas addPizza"/>
+
+      <typeMapping xmlns:ns="http://client" qname="ns:&gt;addPizza" type="java:client.AddPizza" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://client" qname="ns:&gt;getAllPizzas" type="java:client.GetAllPizzas" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://client" qname="ns:&gt;getAllPizzasResponse" type="java:client.GetAllPizzasResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://client" qname="ns:&gt;getPizzaById" type="java:client.GetPizzaById" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://client" qname="ns:Pizza" type="java:client.Pizza" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://client" qname="ns:&gt;addPizzaResponse" type="java:client.AddPizzaResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://client" qname="ns:&gt;getPizzaByIdResponse" type="java:client.GetPizzaByIdResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <arrayMapping xmlns:ns="http://client" xmlns:cmp-ns="http://www.w3.org/2001/XMLSchema" qname="ns:ArrayOf_xsd_anyType" type="java:java.lang.Object[]" innerType="cmp-ns:anyType" encodingStyle=""/>
+  </service>
+</deployment>
