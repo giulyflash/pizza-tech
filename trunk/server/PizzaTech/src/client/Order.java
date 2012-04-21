@@ -17,9 +17,9 @@ public class Order {
 	private int id;
 	@Column(name = "address", nullable = false)
 	private String address;
-	@Column(name = "delivered", nullable = false)
+	@Column(name = "delivered", nullable = false, columnDefinition = "BIT", length = 1)
 	private boolean delivered;
-	
+
 	@Transient
 	private Set pizzas = new HashSet();
 

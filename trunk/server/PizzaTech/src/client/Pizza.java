@@ -29,7 +29,7 @@ public class Pizza implements Cloneable {
 	private String name;
 	@Column(name = "description", nullable = false)
 	private String description;
-	@Column(name = "is_permanent", nullable = false)
+	@Column(name = "is_permanent", nullable = false, columnDefinition = "BIT", length = 1)
 	private boolean isPermanent;
 	@Column(name = "link", nullable = false)
 	private String link;
