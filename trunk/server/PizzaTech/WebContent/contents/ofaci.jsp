@@ -1,17 +1,17 @@
 
-<%@page import="client.DBInterface"%>
-<%@page import="client.Ingredient"%>
-<%@page import="client.Pizza"%>
+<%@page import="pizzatech.dbaccess.DBInterface"%>
+<%@page import="pizzatech.model.Ingredient"%>
+<%@page import="pizzatech.model.Pizza"%>
 <%@page import="java.util.*"  %>
-<%@page import="client.DBImplementation" %>
-<%@page import="client.MiscPizzaHelper"%>
+<%@page import="pizzatech.dbaccess.DBImplementation" %>
+<%@page import="pizzatech.model.MiscPizzaHelper"%>
 
 <% 
 //session.setAttribute("Ingreds",null);
-List<Pizza> pizzaPerm;
+ArrayList<Pizza> pizzaPerm;
 if (session.getAttribute("allPizzaCache")==null)
 {
-pizzaPerm=DBImplementation.getInstance(getServletContext()).getPermanentPizzas();
+pizzaPerm=DBImplementation.getInstance().getPermanentPizzas();
 ArrayList<Pizza> pizzaSave=(ArrayList<Pizza>)session.getAttribute("save");
 session.setAttribute("allPizzaCache",pizzaPerm);
 if (pizzaSave!=null)
@@ -88,13 +88,13 @@ if (request.getParameter("act").equals("add"))
 	if (session.getAttribute("Ingreds")!=null)
 	{
 	Pizza al = ((Pizza)(session.getAttribute("Ingreds")));
-	al.addIngredient(DBImplementation.getInstance(getServletContext()).getIngredientById(new Integer(sessionSet)));	
+	al.addIngredient(DBImplementation.getInstance().getIngredientById(new Integer(sessionSet)));	
 	session.setAttribute("Ingreds",al );
 	}
 	else
 	{
 		Pizza al=new Pizza();
-		al.addIngredient(DBImplementation.getInstance(getServletContext()).getIngredientById(new Integer(sessionSet)));		
+		al.addIngredient(DBImplementation.getInstance().getIngredientById(new Integer(sessionSet)));		
 		session.setAttribute("Ingreds",al );
 	}
 }
@@ -129,7 +129,7 @@ else
 <% Pizza ingred=(Pizza)session.getAttribute("Ingreds");   %>
       <form method="post" action="<%=request.getRequestURL() %>" name="asta">
         <select name="Ingred">
-<% List<Ingredient> ingreds=DBImplementation.getInstance(getServletContext()).getIngredients();
+<% ArrayList<Ingredient> ingreds=DBImplementation.getInstance().getIngredients();
 for (int i=0;i<ingreds.size();i++)	
 {
 	Ingredient crt=ingreds.get(i);	

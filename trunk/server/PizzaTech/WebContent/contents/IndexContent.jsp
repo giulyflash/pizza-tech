@@ -1,6 +1,6 @@
 
-<%@page import="client.DBInterface"%>
-<%@page import="client.DBImplementation"%>
+<%@page import="pizzatech.dbaccess.DBInterface"%>
+<%@page import="pizzatech.dbaccess.DBImplementation"%>
 
 
 <% 	boolean logat = false;
@@ -19,13 +19,13 @@
 				<div id="poza_camin">
 				</div>
 				<br/>
-				The easiest way to order a good pizza!
+				Cea mai noua pizzerie din Complexul Studentesc Timisoara!
 				<br />
 				<ul style="text-align:left; margin-left : 30px;">	
-					<li>create your own pizza right now!</li>
-					<li>the delivery will be very fast</li>
-					<li>directly to your location</li>
-					<li>you can create new pizzas and share with your friends</li>
+					<li>nonconformista</li>
+					<li>direct la tine in camin (Caminul 11 Bucatarie Etaj 4)</li>
+					<li>poti sa ne trimiti link-ul spre reteta ta :)</li>
+					<li>poti participa la preparare</li>
 				</ul>
 			</div>
 		</div>

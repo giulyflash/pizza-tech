@@ -1,11 +1,11 @@
-<%@page import="client.DBInterface"%>
-<%@page import="client.Pizza"%>
+<%@page import="pizzatech.dbaccess.DBInterface"%>
+<%@page import="pizzatech.model.Pizza"%>
 <%@page import="java.text.DecimalFormat"%><html>
-<%@page  import="client.Order"%>
+<%@page  import="pizzatech.model.Order"%>
 <%@page import="java.util.*"  %>
-<%@page import="client.DBImplementation" %>
-<% DBInterface database = DBImplementation.getInstance(getServletContext());%>
-<% List <Order> orders = database.getDeliveredOrders(); %>
+<%@page import="pizzatech.dbaccess.DBImplementation" %>
+<% DBInterface database = DBImplementation.getInstance();%>
+<% ArrayList <Order> orders = database.getDeliveredOrders(); %>
 
 <div >
 Sunt <%= orders.size() %> comenzi preluate:

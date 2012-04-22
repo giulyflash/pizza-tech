@@ -1,4 +1,4 @@
-<%@ taglib uri="/WEB-INF/tlds/template.tld" prefix='template' %>
+<%@ taglib uri='/WEB-INF/tlds/template.tld' prefix='template' %>
 <%String userlog = (String)session.getAttribute("user");
 if ((userlog==null)||(!userlog.equals("admin"))){
 	session.setAttribute("logged","fals");
