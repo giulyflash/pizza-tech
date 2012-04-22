@@ -5,6 +5,7 @@
 
 <%@page import="client.DBInterface"%><html>
 <head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
 		<template:get name='header'/>
 		<style type="text/css">
 		#main_panel
