@@ -6,11 +6,17 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
 @Entity
 @Table(name = "ORDER_TABLE")
+@NamedQueries({
+	@NamedQuery(name = QueryConstants.GET_UNDELIVERED_ORDERS, query = "SELECT e from Order e WHERE e.delivered = false"),
+	@NamedQuery(name = QueryConstants.GET_DELIVERED_ORDERS, query = "SELECT e from Order e WHERE e.delivered = true"),
+	@NamedQuery(name = QueryConstants.GET_ALL_ORDERS, query = "SELECT e from Order")})
 public class Order {
 	@Id
 	@GeneratedValue

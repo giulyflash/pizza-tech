@@ -1,5 +1,6 @@
 package client;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -48,7 +49,78 @@ public class DBImplementation implements DBInterface {
 			em.getTransaction().commit();
 		}
 	}
-
+	
+	public Ingredient getIngredientById(int id){
+		Query q = em.createNamedQuery(QueryConstants.GET_INGREDIENT_BY_ID);
+		q.setParameter("id", id);
+		Ingredient ingr = (Ingredient) q.getSingleResult();
+		return ingr;
+	}
+	
+	public List<Ingredient> getIngredients() {
+		Query q = em.createNamedQuery(QueryConstants.GET_ALL_INGREDIENTS);
+		List<Ingredient> regs = (List<Ingredient>) q.getResultList();
+		return regs;
+	}
+	
+	public List<Order> getUndeliveredOrders() {
+		Query q = em.createNamedQuery(QueryConstants.GET_UNDELIVERED_ORDERS);
+		List<Order> regs = (List<Order>) q.getResultList();
+		return regs;
+	}
+	
+	public List<Order> getDeliveredOrders(){
+		Query q = em.createNamedQuery(QueryConstants.GET_DELIVERED_ORDERS);
+		List<Order> regs = (List<Order>) q.getResultList();
+		return regs;
+	}
+	public List<Order> getAllOrders(){
+		Query q = em.createNamedQuery(QueryConstants.GET_ALL_ORDERS);
+		List<Order> regs = (List<Order>) q.getResultList();
+		return regs;
+	}
+	
+	public List<Pizza> getPermanentPizzas(){
+		Query q = em.createNamedQuery(QueryConstants.GET_PERMANENT_PIZZAS);
+		List<Pizza> regs = (List<Pizza>) q.getResultList();
+		return regs;
+	}
+	
+	public List<Pizza> getNonPermanentPizzas(){
+		Query q = em.createNamedQuery(QueryConstants.GET_NONPERMANENT_PIZZAS);
+		List<Pizza> regs = (List<Pizza>) q.getResultList();
+		return regs;
+	}
+	
+	public List<Pizza> getLastThreePizzas(){
+		Query q = em.createNamedQuery(QueryConstants.GET_LASTTHREE_PIZZAS);
+		List<Pizza> regs = (List<Pizza>) q.getResultList();
+		return regs;
+	}
+	
+	public void markAsDelivered(int orderId){
+	//To be implemented	
+	}
+	
+	public void addIngredient(Ingredient ingredient){
+		em.getTransaction().begin();
+		try {
+			//ingredient.computeDate();
+			em.persist(ingredient);
+		} finally {
+			em.getTransaction().commit();
+		}
+	}
+	
+	public void addOrder(Order order){
+		em.getTransaction().begin();
+		try {
+			//ingredient.computeDate();
+			em.persist(order);
+		} finally {
+			em.getTransaction().commit();
+		}
+	}
 	protected void finalize() throws Throwable {
 		em.clear();
 	}
