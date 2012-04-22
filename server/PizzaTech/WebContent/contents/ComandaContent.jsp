@@ -1,11 +1,11 @@
 
-<%@page import="client.DBInterface"%>
-<%@page import="client.Ingredient"%>
-<%@page import="client.Pizza"%>
-<%@page import="client.Order"%>
+<%@page import="pizzatech.dbaccess.DBInterface"%>
+<%@page import="pizzatech.model.Ingredient"%>
+<%@page import="pizzatech.model.Pizza"%>
+<%@page import="pizzatech.model.Order"%>
 <%@page import="java.util.*"  %>
-<%@page import="client.DBImplementation" %>
-<%@page import="client.MiscPizzaHelper"%>
+<%@page import="pizzatech.dbaccess.DBImplementation" %>
+<%@page import="pizzatech.model.MiscPizzaHelper"%>
 
 <%
 	ArrayList<Pizza> pizzas=(ArrayList<Pizza>)session.getAttribute("cos");
@@ -28,7 +28,7 @@
 			if (!pizza.getIsPermanent())
 				if (single.get(pizza.getName())==null)
 				{
-					DBImplementation.getInstance(getServletContext()).addPizza(pizza);
+					DBImplementation.getInstance().addPizza(pizza);
 					single.put(pizza.getName(),pizza);
 				}
 				else
@@ -37,7 +37,7 @@
 		
 		order.setAddress(request.getParameter("adresa"));
 		order.setDelivered(false);		
-		DBImplementation.getInstance(getServletContext()).addOrder(order);
+		DBImplementation.getInstance().addOrder(order);
 		out.print("Comanda a fost trimisa.");
 		session.setAttribute("cos",null);
 		return; 

@@ -36,13 +36,4 @@
     <servlet-name>AdminServlet</servlet-name>
     <url-pattern>/servlet/AdminServlet</url-pattern>
   </servlet-mapping>
-  <servlet>
-    <display-name>DBImplementation</display-name>
-    <servlet-name>DBImplementation</servlet-name>
-    <servlet-class>client.DBImplementation</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>DBImplementation</servlet-name>
-    <url-pattern>/DBImplementation</url-pattern>
-  </servlet-mapping>
 </web-app>

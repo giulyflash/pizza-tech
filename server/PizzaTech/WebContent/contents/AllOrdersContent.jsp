@@ -1,12 +1,12 @@
-<%@page import="client.DBInterface"%>
-<%@page import="client.Pizza"%>
-<%@page  import="client.Order"%>
+<%@page import="pizzatech.dbaccess.DBInterface"%>
+<%@page import="pizzatech.model.Pizza"%>
+<%@page import="java.text.DecimalFormat"%><html>
+<%@page  import="pizzatech.model.Order"%>
 <%@page import="java.util.*"  %>
-<%@page import java.text.DecimalFormat %>
-<%@page import="client.DBImplementation" %>
-<% DBInterface database = DBImplementation.getInstance(getServletContext());%>
-<% List <Order> orders = database.getAllOrders();  %>
-<html>
+<%@page import="pizzatech.dbaccess.DBImplementation" %>
+<% DBInterface database = DBImplementation.getInstance();%>
+<% ArrayList <Order> orders = database.getAllOrders();  %>
+
 <%
 DecimalFormat df = new DecimalFormat("#.## RON");
 for (int i=0; i<orders.size(); i++){%>

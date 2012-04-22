@@ -1,0 +1,97 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from DBImplementationService WSDL service -->
+
+  <service name="DBImplementation" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://client"/>
+      <parameter name="wsdlServiceElement" value="DBImplementationService"/>
+      <parameter name="schemaQualified" value="http://client"/>
+      <parameter name="wsdlServicePort" value="DBImplementation"/>
+      <parameter name="className" value="client.DBImplementationSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="DBImplementation"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="getPizzaById" qname="operNS:getPizzaById" xmlns:operNS="http://client" returnQName="retNS:getPizzaByIdReturn" xmlns:retNS="http://client" returnType="rtns:Pizza" xmlns:rtns="http://client" soapAction="" >
+        <parameter qname="pns:id" xmlns:pns="http://client" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getAllPizzas" qname="operNS:getAllPizzas" xmlns:operNS="http://client" returnQName="retNS:getAllPizzasReturn" xmlns:retNS="http://client" returnType="rtns:ArrayOf_xsd_anyType" xmlns:rtns="http://client" returnItemQName="tns:item" xmlns:tns="http://client" soapAction="" >
+      </operation>
+      <operation name="addPizza" qname="operNS:addPizza" xmlns:operNS="http://client" soapAction="" >
+        <parameter qname="pns:pizza" xmlns:pns="http://client" type="tns:Pizza" xmlns:tns="http://client"/>
+      </operation>
+      <parameter name="allowedMethods" value="getPizzaById getAllPizzas addPizza"/>
+
+      <typeMapping
+        xmlns:ns="http://client"
+        qname="ns:>addPizza"
+        type="java:client.AddPizza"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://client"
+        qname="ns:>getAllPizzas"
+        type="java:client.GetAllPizzas"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://client"
+        qname="ns:>getAllPizzasResponse"
+        type="java:client.GetAllPizzasResponse"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://client"
+        qname="ns:>getPizzaById"
+        type="java:client.GetPizzaById"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://client"
+        qname="ns:Pizza"
+        type="java:pizzatech.model.Pizza"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://client"
+        qname="ns:>addPizzaResponse"
+        type="java:client.AddPizzaResponse"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://client"
+        qname="ns:>getPizzaByIdResponse"
+        type="java:client.GetPizzaByIdResponse"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <arrayMapping
+        xmlns:ns="http://client"
+        qname="ns:ArrayOf_xsd_anyType"
+        type="java:java.lang.Object[]"
+        innerType="cmp-ns:anyType" xmlns:cmp-ns="http://www.w3.org/2001/XMLSchema"
+        encodingStyle=""
+      />
+  </service>
+</deployment>

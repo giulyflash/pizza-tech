@@ -1,20 +1,22 @@
 
-<%@page import="client.DBInterface"%>
-<%@page import="client.Ingredient"%>
-<%@page import="client.Pizza"%>
-<%@page import="client.Order"%>
-<%@page import="client.MiscPizzaHelper"%>
+<%@page import="pizzatech.dbaccess.DBInterface"%>
+<%@page import="pizzatech.model.Ingredient"%>
+<%@page import="pizzatech.model.Pizza"%>
+<%@page import="pizzatech.model.Order"%>
+<%@page import="pizzatech.model.MiscPizzaHelper"%>
 <%@page import="java.util.*"  %>
-<%@page import="client.DBImplementation" %>
+<%@page import="pizzatech.dbaccess.DBImplementation" %>
 <%
-List<Pizza> pizzaPerm;
+ArrayList<Pizza> pizzaPerm;
 ArrayList<Pizza> p=new ArrayList<Pizza>();
 if (request.getParameter("id")!=null)
 {	
-	pizzaPerm=(List<Pizza>)session.getAttribute("allPizzaCache");
+	pizzaPerm=(ArrayList<Pizza>)session.getAttribute("allPizzaCache");
 	{
 	if (session.getAttribute("cos")==null)
 	{		
+		
+
 		if (request.getParameter("added")!=null)
 		{
 			for (int i=0;i<pizzaPerm.size();i++)
@@ -51,7 +53,7 @@ if (request.getParameter("id")!=null)
 }
 else
 {
-	pizzaPerm=DBImplementation.getInstance(getServletContext()).getPermanentPizzas();
+	pizzaPerm=DBImplementation.getInstance().getPermanentPizzas();
 	ArrayList<Pizza> pizzaSave=(ArrayList<Pizza>)session.getAttribute("save");
 	if (pizzaSave!=null)
 	pizzaPerm.addAll(pizzaSave);

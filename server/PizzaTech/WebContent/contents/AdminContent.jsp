@@ -1,5 +1,6 @@
 <%
-try{ String userlog = (String)session.getAttribute("user");
+try{
+String userlog = (String)session.getAttribute("user");
 if ((userlog==null)||(!userlog.equals("admin")))
 	request.getRequestDispatcher("AdminLogin.jsp").forward(request,response);
 	//response.sendRedirect("AdminLogin.jsp");
