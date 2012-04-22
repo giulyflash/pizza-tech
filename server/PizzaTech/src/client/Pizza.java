@@ -19,7 +19,10 @@ import javax.persistence.Transient;
 @Table(name = "PIZZA")
 @NamedQueries({
 	@NamedQuery(name = QueryConstants.GET_PIZZA_BY_ID, query = "SELECT e from Pizza e WHERE e.id = :id"),
-	@NamedQuery(name = QueryConstants.GET_ALL_PIZZAS, query = "SELECT e from Pizza e")})
+	@NamedQuery(name = QueryConstants.GET_ALL_PIZZAS, query = "SELECT e from Pizza e"),
+	@NamedQuery(name = QueryConstants.GET_PERMANENT_PIZZAS, query = "SELECT e from Pizza e WHERE e.isPermanent = true"),
+	@NamedQuery(name = QueryConstants.GET_NONPERMANENT_PIZZAS, query = "SELECT e from Pizza e WHERE e.isPermanent = false"),
+	@NamedQuery(name = QueryConstants.GET_LASTTHREE_PIZZAS, query = "SELECT e from Pizza e WHERE e.isPermanent = false")}) //correct it
 public class Pizza implements Cloneable {
 
 	@Id

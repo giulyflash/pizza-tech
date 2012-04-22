@@ -1,9 +1,10 @@
 package client;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MiscPizzaHelper {
-	public static int pizzaCount(Pizza p, ArrayList<Pizza> pl) {
+	public static int pizzaCount(Pizza p, List<Pizza> pl) {
 		int nr = 0;
 		if (pl == null)
 			return nr;
@@ -14,7 +15,7 @@ public class MiscPizzaHelper {
 		return nr;
 	}
 
-	public static boolean pizzaSeeker(String name, ArrayList<Pizza> pl) {
+	public static boolean pizzaSeeker(String name, List<Pizza> pl) {
 
 		if (pl == null)
 			return false;

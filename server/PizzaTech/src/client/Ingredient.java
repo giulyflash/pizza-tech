@@ -4,10 +4,15 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "INGREDIENT")
+@NamedQueries({
+	@NamedQuery(name = QueryConstants.GET_INGREDIENT_BY_ID, query = "SELECT e from Ingredient e WHERE e.id = :id"),
+	@NamedQuery(name = QueryConstants.GET_ALL_INGREDIENTS, query = "SELECT e from Ingredient") })
 public class Ingredient {
 	@Id
 	@GeneratedValue

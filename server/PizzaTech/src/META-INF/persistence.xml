@@ -6,7 +6,7 @@
 
   <persistence-unit name="hello-world" transaction-type="RESOURCE_LOCAL">
     <!-- <provider>org.hibernate.ejb.HibernatePersistence</provider> -->
-    <non-jta-data-source>java:jboss/datasources/MySqlDS</non-jta-data-source>
+    <jta-data-source>java:jboss/datasources/MySqlDS</jta-data-source>
     <class>client.Order</class>
     <class>client.Pizza</class>
     <class>client.Ingredient</class>
@@ -17,7 +17,7 @@
       	<property name="hibernate.connection.username" value="root"/>
       	<property name="hibernate.connection.password" value="root"/>
       	<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
-        <property name="hibernate.hbm2ddl.auto" value="validate"/>
+        <property name="hibernate.hbm2ddl.auto" value="create-drop"/>
         
         <!-- JDBC connection pool (use the built-in) --> 
 		<property name="connection.pool_size" value="10" /> 

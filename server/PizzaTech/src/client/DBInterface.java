@@ -1,6 +1,7 @@
 package client;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public interface DBInterface {
 
@@ -22,7 +23,7 @@ public interface DBInterface {
 	 *            the id of the object in the database
 	 * @return the created object
 	 */
-//	public abstract Ingredient getIngredientById(int id);
+	public abstract Ingredient getIngredientById(int id);
 
 	/**
 	 * Gets the list of objects of type client.Ingredient representing all the
@@ -30,7 +31,7 @@ public interface DBInterface {
 	 * 
 	 * @return the list
 	 */
-//	public abstract ArrayList<Ingredient> getIngredients();
+	public abstract List<Ingredient> getIngredients();
 
 	/**
 	 * Gets the list of objects of type client.Order representing the orders
@@ -38,7 +39,7 @@ public interface DBInterface {
 	 * 
 	 * @return the list
 	 */
-//	public abstract ArrayList<Order> getUndeliveredOrders();
+	public abstract List<Order> getUndeliveredOrders();
 
 	/**
 	 * Gets the list of objects of type client.Order representing the orders
@@ -46,7 +47,7 @@ public interface DBInterface {
 	 * 
 	 * @return the list
 	 */
-//	public abstract ArrayList<Order> getDeliveredOrders();
+	public abstract List<Order> getDeliveredOrders();
 
 	/**
 	 * Gets the list of objects of type client.Order representing all the orders
@@ -54,7 +55,7 @@ public interface DBInterface {
 	 * 
 	 * @return the list
 	 */
-//	public abstract ArrayList<Order> getAllOrders();
+	public abstract List<Order> getAllOrders();
 
 	/**
 	 * Gets the list of objects of type client.Pizza representing the orders
@@ -62,7 +63,7 @@ public interface DBInterface {
 	 * 
 	 * @return the list
 	 */
-//	public abstract ArrayList<Pizza> getPermanentPizzas();
+	public abstract List<Pizza> getPermanentPizzas();
 
 	/**
 	 * Gets the list of objects of type client.Pizza representing the orders
@@ -70,7 +71,7 @@ public interface DBInterface {
 	 * 
 	 * @return the list
 	 */
-//	public abstract ArrayList<Pizza> getNonPermanentPizzas();
+	public abstract List<Pizza> getNonPermanentPizzas();
 
 	/**
 	 * Gets the list of three objects of type client.Pizza representing the
@@ -78,7 +79,7 @@ public interface DBInterface {
 	 * 
 	 * @return the list
 	 */
-//	public abstract ArrayList<Pizza> getLastThreePizzas();
+	public abstract List<Pizza> getLastThreePizzas();
 
 	/**
 	 * Marks a specific order from the database as delivered, regardless of
@@ -88,7 +89,7 @@ public interface DBInterface {
 	 * @param orderId
 	 *            the id of the order
 	 */
-//	public abstract void markAsDelivered(int orderId);
+	public abstract void markAsDelivered(int orderId);
 
 	/**
 	 * Adds a new row to the table of ingredients with the information stored in
@@ -97,7 +98,7 @@ public interface DBInterface {
 	 * @param ingredient
 	 *            the object containing the information to be added to the table
 	 */
-//	public abstract void addIngredient(Ingredient ingredient);
+	public abstract void addIngredient(Ingredient ingredient);
 
 	/**
 	 * Adds a new row to the table of pizzas with the information stored in the
@@ -115,7 +116,7 @@ public interface DBInterface {
 	 * @param order
 	 *            the object containing the information to be added to the table
 	 */
-//	public abstract void addOrder(Order order);
+	public abstract void addOrder(Order order);
 
 	/**
 	 * Updates the information of a specific client.Ingredient object in the
