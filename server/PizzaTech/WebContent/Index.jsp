@@ -5,10 +5,10 @@
 <%@ taglib uri='/WEB-INF/tlds/template.tld' prefix='template'%>
 
 <template:insert template='Template.jsp'>
-	<template:put name='title' content='Pizeria C11E4' direct='true' />
-	<template:put name="header"
+	<%-- <template:put name='title' content='Pizeria C11E4' direct='true' />
+	 <template:put name="header"
 		content='<link rel="stylesheet" type="text/css" href="css/index.css"'
-		direct='true' />
+		direct='true' />--%> 
 	<template:put name='content' content='contents/IndexContent.jsp' />
 </template:insert>
 <%
@@ -21,6 +21,6 @@
 	p.setIsPermanent(false);
 	p.setLink("sds");
 
-	db.addPizza(p);
+	db.addPizza(p); 
 %>
 
