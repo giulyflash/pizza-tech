@@ -36,4 +36,22 @@
     <servlet-name>AdminServlet</servlet-name>
     <url-pattern>/servlet/AdminServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <display-name>DBInterface</display-name>
+    <servlet-name>DBInterface</servlet-name>
+    <servlet-class>pizzatech.dbaccess.DBInterface</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DBInterface</servlet-name>
+    <url-pattern>/DBInterface</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <display-name>DBImplementation</display-name>
+    <servlet-name>DBImplementation</servlet-name>
+    <servlet-class>pizzatech.dbaccess.DBImplementation</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DBImplementation</servlet-name>
+    <url-pattern>/DBImplementation</url-pattern>
+  </servlet-mapping>
 </web-app>
