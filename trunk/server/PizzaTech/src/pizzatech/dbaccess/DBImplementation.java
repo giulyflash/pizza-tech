@@ -2,6 +2,7 @@ package pizzatech.dbaccess;
 
 import java.util.List;
 
+import javax.jws.WebService;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Query;
@@ -11,6 +12,7 @@ import pizzatech.model.Ingredient;
 import pizzatech.model.Order;
 import pizzatech.model.Pizza;
 
+@WebService(portName="PizzaTechPort", serviceName="PizzaTechService", endpointInterface="pizzatech.PizzaTech", targetNamespace="http://pizzatech")
 public class DBImplementation implements DBInterface {
 
 	private EntityManager em = null;

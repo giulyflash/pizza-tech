@@ -2,10 +2,14 @@ package pizzatech.dbaccess;
 
 import java.util.List;
 
+import javax.jws.WebMethod;
+import javax.jws.WebService;
+
 import pizzatech.model.Ingredient;
 import pizzatech.model.Order;
 import pizzatech.model.Pizza;
 
+@WebService(name = "PizzaTech", targetNamespace = "http://pizzatech")
 public interface DBInterface {
 
 	/**
@@ -115,6 +119,7 @@ public interface DBInterface {
 	/**
 	 * @return all the pizzas in the system
 	 */
+	@WebMethod
 	public List<Pizza> getAllPizzas();
 
 	/**
