@@ -4,9 +4,9 @@
  xsi:schemaLocation="http://java.sun.com/xml/ns/persistence 
  http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
 
-  <persistence-unit name="hello-world" transaction-type="RESOURCE_LOCAL">
+  <persistence-unit name="hello-world" transaction-type="JTA">
     <!-- <provider>org.hibernate.ejb.HibernatePersistence</provider> -->
-    <non-jta-data-source>java:jboss/datasources/MySqlDS</non-jta-data-source>
+    <jta-data-source>java:jboss/datasources/MySqlDS</jta-data-source>
     <class>pizzatech.model.Order</class>
     <class>pizzatech.model.Pizza</class>
     <class>pizzatech.model.Ingredient</class>
