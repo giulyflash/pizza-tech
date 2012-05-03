@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="PizzaTechService" targetNamespace="http://pizzatech" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://pizzatech" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+<schema xmlns="http://www.w3.org/2001/XMLSchema">
+  <import namespace="http://pizzatech" schemaLocation="PizzaTechService_schema1.xsd"/>
+</schema>
+  </wsdl:types>
+  <wsdl:message name="createOrderResponse">
+    <wsdl:part name="parameters" element="tns:createOrderResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAllPizzasResponse">
+    <wsdl:part name="parameters" element="tns:getAllPizzasResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAllDoughTypesResponse">
+    <wsdl:part name="parameters" element="tns:getAllDoughTypesResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAllToppingsResponse">
+    <wsdl:part name="parameters" element="tns:getAllToppingsResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addPizza">
+    <wsdl:part name="parameters" element="tns:addPizza">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAllToppings">
+    <wsdl:part name="parameters" element="tns:getAllToppings">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createOrder">
+    <wsdl:part name="parameters" element="tns:createOrder">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAllOrders">
+    <wsdl:part name="parameters" element="tns:getAllOrders">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAllOrdersResponse">
+    <wsdl:part name="parameters" element="tns:getAllOrdersResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addPizzaResponse">
+    <wsdl:part name="parameters" element="tns:addPizzaResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAllDoughTypes">
+    <wsdl:part name="parameters" element="tns:getAllDoughTypes">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAllMainIngedients">
+    <wsdl:part name="parameters" element="tns:getAllMainIngedients">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAllMainIngedientsResponse">
+    <wsdl:part name="parameters" element="tns:getAllMainIngedientsResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAllPizzas">
+    <wsdl:part name="parameters" element="tns:getAllPizzas">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="PizzaTechService">
+    <wsdl:operation name="getAllOrders">
+      <wsdl:input name="getAllOrders" message="tns:getAllOrders">
+    </wsdl:input>
+      <wsdl:output name="getAllOrdersResponse" message="tns:getAllOrdersResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addPizza">
+      <wsdl:input name="addPizza" message="tns:addPizza">
+    </wsdl:input>
+      <wsdl:output name="addPizzaResponse" message="tns:addPizzaResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllPizzas">
+      <wsdl:input name="getAllPizzas" message="tns:getAllPizzas">
+    </wsdl:input>
+      <wsdl:output name="getAllPizzasResponse" message="tns:getAllPizzasResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllMainIngedients">
+      <wsdl:input name="getAllMainIngedients" message="tns:getAllMainIngedients">
+    </wsdl:input>
+      <wsdl:output name="getAllMainIngedientsResponse" message="tns:getAllMainIngedientsResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllDoughTypes">
+      <wsdl:input name="getAllDoughTypes" message="tns:getAllDoughTypes">
+    </wsdl:input>
+      <wsdl:output name="getAllDoughTypesResponse" message="tns:getAllDoughTypesResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllToppings">
+      <wsdl:input name="getAllToppings" message="tns:getAllToppings">
+    </wsdl:input>
+      <wsdl:output name="getAllToppingsResponse" message="tns:getAllToppingsResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createOrder">
+      <wsdl:input name="createOrder" message="tns:createOrder">
+    </wsdl:input>
+      <wsdl:output name="createOrderResponse" message="tns:createOrderResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PizzaTechServiceSoapBinding" type="tns:PizzaTechService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getAllOrders">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getAllOrders">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAllOrdersResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addPizza">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="addPizza">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addPizzaResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllPizzas">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getAllPizzas">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAllPizzasResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllMainIngedients">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getAllMainIngedients">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAllMainIngedientsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllDoughTypes">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getAllDoughTypes">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAllDoughTypesResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllToppings">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getAllToppings">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAllToppingsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createOrder">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="createOrder">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="createOrderResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PizzaTechService">
+    <wsdl:port name="PizzaTechPort" binding="tns:PizzaTechServiceSoapBinding">
+      <soap:address location="http://localhost:9090/PizzaTechPort"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
