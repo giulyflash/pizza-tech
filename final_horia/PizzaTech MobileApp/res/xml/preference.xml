@@ -1,0 +1,35 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory android:title="@string/category_general" >
+        <EditTextPreference
+            android:dialogTitle="@string/dialog_title_name"
+            android:key="@string/key_name"
+            android:summary="@string/summary_name"
+            android:title="@string/title_name" />
+        <EditTextPreference
+            android:dialogTitle="@string/dialog_title_description"
+            android:key="@string/key_description"
+            android:summary="@string/summary_description"
+            android:title="@string/title_description" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/category_dough" >
+        <ListPreference
+            android:dialogTitle="@string/dialog_title_dough"
+            android:key="@string/key_dough"
+            android:summary="@string/summary_dough"
+            android:title="@string/title_dough" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/category_main_ingredients" >
+        <PreferenceScreen
+            android:key="@string/key_main_ingredients_screen"
+            android:title="@string/category_main_ingredients" >
+        </PreferenceScreen>
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/category_toppings" >
+        <PreferenceScreen
+            android:key="@string/key_toppings_screen"
+            android:title="@string/category_toppings" >
+        </PreferenceScreen>
+    </PreferenceCategory>
+
+</PreferenceScreen>

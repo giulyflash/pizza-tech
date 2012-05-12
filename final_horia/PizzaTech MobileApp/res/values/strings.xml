@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, PizzaTechMobileAppActivity!</string>
+    <string name="app_name">PizzaTech MobileApp</string>
+    <string name="no_pizzas_found">No pizza found</string>
+    <string name="create_order">Create order</string>
+    <string name="show_basket">My basket</string>
+    <string name="submit_order">Submit</string>
+    <string name="cancel_order">Cancel</string>
+    <string name="add_pizza_to_order">Add another pizza</string>
+    <string name="create_pizza">Create Pizza</string>
+    <string name="category_general">General</string>
+    <string name="key_name">NAME</string>
+    <string name="dialog_title_name">Name:</string>
+    <string name="summary_name">Set the name of the pizza</string>
+    <string name="title_name">Name</string>
+    <string name="key_description">DESCRIPTION</string>
+    <string name="dialog_title_description">Description</string>
+    <string name="summary_description">Set the description of the pizza</string>
+    <string name="title_description">Description</string>
+    <string name="category_dough">Dough</string>
+    <string name="dialog_title_dough">Dough</string>
+    <string name="key_dough">DOUGH</string>
+    <string name="summary_dough">Type of dough</string>
+    <string name="title_dough">Dough</string>
+    <string name="category_main_ingredients">Main ingredients</string>
+    <string name="category_toppings">Toppings</string>
+    <string name="ok_add_pizza">Ok</string>
+    <string name="cancel_add_pizza">Cancel</string>
+    <string name="key_main_ingredients_screen">MAIN_INGREDIENTS_SCREEN</string>
+    <string name="key_toppings_screen">TOPPINGS_SCREEN</string>
+    <string name="username">Username:</string>
+    <string name="password">Password:</string>
+    <string name="login_ok">Login</string>
+
+</resources>
