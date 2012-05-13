@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?><xs:schema xmlns:tns="http://client/" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified" targetNamespace="http://client/" version="1.0">
+<xs:element name="addPizza" type="tns:addPizza"/>
+<xs:element name="addPizzaResponse" type="tns:addPizzaResponse"/>
+<xs:element name="getAllPizzas" type="tns:getAllPizzas"/>
+<xs:element name="getAllPizzasResponse" type="tns:getAllPizzasResponse"/>
+<xs:element name="getPizzaById" type="tns:getPizzaById"/>
+<xs:element name="getPizzaByIdResponse" type="tns:getPizzaByIdResponse"/>
+<xs:complexType name="addPizza">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:pizza"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="pizza">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="date" type="xs:string"/>
+      <xs:element minOccurs="0" name="description" type="xs:string"/>
+      <xs:element name="id" type="xs:int"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="ingredients" nillable="true" type="xs:anyType"/>
+      <xs:element name="isPermanent" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="link" type="xs:string"/>
+      <xs:element minOccurs="0" name="name" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="addPizzaResponse">
+    <xs:sequence/>
+  </xs:complexType>
+<xs:complexType name="getAllPizzas">
+    <xs:sequence/>
+  </xs:complexType>
+<xs:complexType name="getAllPizzasResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:pizza"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="getPizzaById">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="getPizzaByIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:pizza"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

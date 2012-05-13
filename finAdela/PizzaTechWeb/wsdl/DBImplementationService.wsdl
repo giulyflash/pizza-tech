@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="DBImplementationService" targetNamespace="http://client/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://client/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+<schema xmlns="http://www.w3.org/2001/XMLSchema">
+  <import namespace="http://client/" schemaLocation="DBImplementationService_schema1.xsd"/>
+</schema>
+  </wsdl:types>
+  <wsdl:message name="getAllPizzasResponse">
+    <wsdl:part name="parameters" element="tns:getAllPizzasResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getPizzaById">
+    <wsdl:part name="parameters" element="tns:getPizzaById">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addPizzaResponse">
+    <wsdl:part name="parameters" element="tns:addPizzaResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAllPizzas">
+    <wsdl:part name="parameters" element="tns:getAllPizzas">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getPizzaByIdResponse">
+    <wsdl:part name="parameters" element="tns:getPizzaByIdResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addPizza">
+    <wsdl:part name="parameters" element="tns:addPizza">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="DBImplementation">
+    <wsdl:operation name="addPizza">
+      <wsdl:input name="addPizza" message="tns:addPizza">
+    </wsdl:input>
+      <wsdl:output name="addPizzaResponse" message="tns:addPizzaResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllPizzas">
+      <wsdl:input name="getAllPizzas" message="tns:getAllPizzas">
+    </wsdl:input>
+      <wsdl:output name="getAllPizzasResponse" message="tns:getAllPizzasResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPizzaById">
+      <wsdl:input name="getPizzaById" message="tns:getPizzaById">
+    </wsdl:input>
+      <wsdl:output name="getPizzaByIdResponse" message="tns:getPizzaByIdResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DBImplementationServiceSoapBinding" type="tns:DBImplementation">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="addPizza">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="addPizza">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addPizzaResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllPizzas">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getAllPizzas">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAllPizzasResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPizzaById">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getPizzaById">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getPizzaByIdResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DBImplementationService">
+    <wsdl:port name="DBImplementationPort" binding="tns:DBImplementationServiceSoapBinding">
+      <soap:address location="http://localhost:9090/DBImplementationPort"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
